@@ -2,6 +2,8 @@
 
 ## Description
 
+In our task this week, we are given starter code that is already fully functioning. What we needed to do was refactor the code to be a GraphQL API built with the Apollo Server instead of the functioning Google Books API.
+
 ## Table of Contents
 
 - [User Story](#user-story)
@@ -44,3 +46,17 @@
     THEN that book is deleted from my saved books list
     WHEN I click on the Logout button
     THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
+
+## Installation
+
+1. Clone the repository.
+2. Run npm install through the terminal to install any missing dependencies.
+3. Run npm start through terminal to access the GraphQL Sandbox.
+4. Run npm run build to create the website.
+5. Run npm run develop to launch the build and be redirected to localhost:3000.
+
+## Links
+
+Email: andynguyen_3@hotmail.com <br />
+Github: https://github.com/androneus14 <br />
+Deployed Application: https://anpwa-texteditor.herokuapp.com/ <br />
