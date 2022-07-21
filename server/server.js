@@ -30,7 +30,7 @@ app.get('*', (req, res) => {
 // app.use(routes);
 
 const startApolloServer = async (typeDefs, resolvers) => {
-  await server.start();
+  await server.start(); 
   server.applyMiddleware({ app });
 
   db.once('open', () => {
