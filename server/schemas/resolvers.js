@@ -1,4 +1,4 @@
-const { AutheticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -8,7 +8,7 @@ const resolvers = {
             if (context.user) {
                 return User.findOne({ _id: context.user._id });
             }
-            throw new AutheticationError('Youn need to be logged in!');
+            throw new AuthenticationError('Youn need to be logged in!');
         },
     },
 
@@ -23,13 +23,13 @@ const resolvers = {
             const user = await User.findOne({ email });
 
             if (!user) {
-                throw new AutheticationError('No user found with this email address!');
+                throw new AuthenticationError('No user found with this email address!');
             }
 
             const correctPw = await user.isCorrectPassword(password);
 
             if (!correctPw) {
-                throw new AutheticationError('Incorrect password input!');
+                throw new AuthenticationError('Incorrect password input!');
             }
 
             const token = signToken(user);
@@ -38,24 +38,26 @@ const resolvers = {
 
         saveBook: async (parent, {input}, context) => {
             if (context.user) {
-                return User.findOneAndUpdate(
+                const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { savedBooks: input }},
                     { new: true }
                 );
+                return updatedUser;
             }
-            throw new AutheticationError('You need to be logged in!');
+            throw new AuthenticationError('You need to be logged in!');
         },
 
         removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
-                return User.findOneAndUpdate(
+                const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $pull: { savedBooks: { bookId } } },
                     { new: true }
                 );
+                return updatedUser;
             }
-            throw new AutheticationError('You need to be logged in!');
+            throw new AuthenticationError('You need to be logged in!');
         },
     },
 };
