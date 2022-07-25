@@ -55,6 +55,10 @@ In our task this week, we are given starter code that is already fully functioni
 4. Run npm run build to create the website.
 5. Run npm run develop to launch the build and be redirected to localhost:3000.
 
+## Issues
+
+I'm not sure where I went wrong, but heroku deployed application isn't able to login/signup a new user, however the localhost functions work fine. I've tried doing heroku run npm install, start, develop, etc but nothing seems to get it working properly. The application works fine on the localhost but not heroku.
+
 ## Links
 
 Email: andynguyen_3@hotmail.com <br />
