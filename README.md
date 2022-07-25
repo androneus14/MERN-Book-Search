@@ -57,7 +57,7 @@ In our task this week, we are given starter code that is already fully functioni
 
 ## Issues
 
-I'm not sure where I went wrong, but heroku deployed application isn't able to login/signup a new user, however the localhost functions work fine. I've tried doing heroku run npm install, start, develop, etc but nothing seems to get it working properly. The application works fine on the localhost but not heroku.
+I'm not sure where I went wrong, but heroku deployed application isn't able to login/signup a new user, however the localhost functions work fine. I've tried doing heroku run npm install, start, develop, etc but nothing seems to get it working properly. The application works fine on the localhost but not heroku. I had the application working fine when I submitted it on Saturday but when I came back to it two days later, I came across these issues and I can't figure out how to resolve it.
 
 ## Links
 
